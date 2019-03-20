@@ -1,0 +1,24 @@
+{
+  "name": "unloop-batch-request",
+  "version": "1.0.1",
+  "description": "Facility for building batch requests to send to dynamoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/un-loop/unloop-batch-request.git"
+  },
+  "keywords": [
+    "dynamodb",
+    "batch",
+    "unloop"
+  ],
+  "author": "Michael Armes (michael@un-loop.org)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/un-loop/unloop-batch-request/issues"
+  },
+  "homepage": "https://github.com/un-loop/unloop-batch-request#readme"
+}
