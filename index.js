@@ -6,7 +6,7 @@ const project = (entity) => {
 
 class BatchRequestBuilder {
     constructor() {
-        this.Items = [];
+        this.Items = {};
     }
 
     AddItems(table, items, op) {
@@ -18,13 +18,13 @@ class BatchRequestBuilder {
     RenderRequest() {
         const request = {};
 
-        for(let table of this.Items) {
+        for(let table in this.Items) {
             const requests = [];
 
             for(let add of this.Items[table].add) {
                 requests.push({
                     PutRequest: {
-                        item: add
+                        Item: add
                     }
                 });
             }
@@ -32,7 +32,7 @@ class BatchRequestBuilder {
             for(let remove of this.Items[table].remove) {
                 requests.push({
                     DeleteRequest: {
-                        item: remove
+                        Item: remove
                     }
                 });
             }
