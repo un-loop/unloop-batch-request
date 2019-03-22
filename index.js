@@ -11,7 +11,7 @@ class BatchRequestBuilder {
 
     AddItems(table, items, op) {
         this.Items[table] = this.Items[table] || { add: [], remove: [] };
-        savedItems[table][op === "remove" ? "remove" : "add"]
+        this.Items[table][op === "remove" ? "remove" : "add"]
             .push(...items.map(project))
     }
 
