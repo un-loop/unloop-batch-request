@@ -10,7 +10,7 @@ class BatchRequestBuilder {
     }
 
     AddItems(table, items, op) {
-        this.Items[table] = Items[table] || { add: [], remove: [] };
+        this.Items[table] = this.Items[table] || { add: [], remove: [] };
         savedItems[table][op === "remove" ? "remove" : "add"]
             .push(...items.map(project))
     }
@@ -18,10 +18,10 @@ class BatchRequestBuilder {
     RenderRequest() {
         const request = {};
 
-        for(let table of Items) {
+        for(let table of this.Items) {
             const requests = [];
 
-            for(let add of Items[table].add) {
+            for(let add of this.Items[table].add) {
                 requests.push({
                     PutRequest: {
                         item: add
@@ -29,7 +29,7 @@ class BatchRequestBuilder {
                 });
             }
 
-            for(let remove of Items[table].remove) {
+            for(let remove of this.Items[table].remove) {
                 requests.push({
                     DeleteRequest: {
                         item: remove
