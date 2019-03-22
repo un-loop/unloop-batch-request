@@ -6,7 +6,7 @@ const project = (entity) => {
 
 class BatchRequestBuilder {
     constructor() {
-        this.Items = {};
+        this.Items = [];
     }
 
     AddItems(table, items, op) {
