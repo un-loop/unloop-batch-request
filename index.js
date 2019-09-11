@@ -1,6 +1,12 @@
 const project = (entity) => {
     let projection = {};
-    for(let prop in entity) if (entity[prop]) projection[prop] = entity[prop];
+    for(let prop in entity) {
+        if (Object.prototype.hasOwnProperty.call(entity, prop)) {
+            if (entity[prop] !== undefined) {
+                projection[prop] = entity[prop];
+            }
+        }
+    }
     return projection;
 }
 

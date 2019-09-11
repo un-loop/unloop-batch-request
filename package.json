@@ -1,6 +1,6 @@
 {
   "name": "unloop-batch-request",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Facility for building batch requests to send to dynamoDB",
   "main": "index.js",
   "scripts": {
